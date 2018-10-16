@@ -9,7 +9,7 @@ import oi
 from commands.autonomous import AutonomousProgram
 
 
-class ExampleBot(CommandBasedRobot):
+class RamsBot(CommandBasedRobot):
     '''
     The CommandBasedRobot base class implements almost everything you need for
     a working robot program. All you need to do is set up the subsystems and
@@ -49,4 +49,4 @@ class ExampleBot(CommandBasedRobot):
 
 
 if __name__ == '__main__':
-    wpilib.run(ExampleBot)
+    wpilib.run(RamsBot)

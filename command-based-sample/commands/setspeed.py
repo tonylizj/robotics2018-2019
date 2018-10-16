@@ -14,9 +14,9 @@ class SetSpeed(TimedCommand):
         self.requires(self.getRobot().lMotor)
 
     def initialize(self):
-        self.getRobot().rMotor.setSpeed(self.power)
+        self.getRobot().rMotor.setSpeed(-self.power)
         self.getRobot().lMotor.setSpeed(self.power)
 
-
     def end(self):
-        self.getRobot().motor.setSpeed(0)
+        self.getRobot().rMotor.setSpeed(0)
+        self.getRobot().lMotor.setSpeed(0)

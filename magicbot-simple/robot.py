@@ -33,19 +33,17 @@ class MyRobot(MagicRobot):
     # No autonomous routine boilerplate required here, anything in the
     # autonomous folder will automatically get added to a list
     #
-    
-    
+
     def teleopPeriodic(self):
         """Place code here that does things as a result of operator
            actions"""
         
         try:
-            if self.joystick.getTrigger():
-                self.component2.do_something()
+            if self.joystick.getY():
+                self.component2.execute(self.joystick.getY())
         except:
             self.onException()
-    
-    
+
     
 if __name__ == '__main__':
     wpilib.run(MyRobot)

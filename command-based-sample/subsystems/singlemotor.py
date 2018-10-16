@@ -3,6 +3,7 @@ from wpilib.command.subsystem import Subsystem
 
 from commands.followjoystick import FollowJoystick
 
+
 class SingleMotor(Subsystem):
     '''
     This example subsystem controls a single Talon in PercentVBus mode.
@@ -15,10 +16,8 @@ class SingleMotor(Subsystem):
 
         self.motor = wpilib.Talon(port)
 
-
     def setSpeed(self, speed):
         self.motor.set(speed)
-
 
     def initDefaultCommand(self):
         self.setDefaultCommand(FollowJoystick())

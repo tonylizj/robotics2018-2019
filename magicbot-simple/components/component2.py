@@ -22,8 +22,5 @@ class Component2:
     def do_something(self):
         self.did_something = True
 
-    def execute(self):
-        if self.did_something:
-            self.some_motor.set(1)
-        else:
-            self.some_motor.set(0)
+    def execute(self, power):
+        self.some_motor.set(power)
