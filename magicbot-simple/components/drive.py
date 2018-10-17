@@ -9,7 +9,7 @@ class Drive:
     component1 = Component1
     lMotor = wpilib.Talon
     rMotor = wpilib.Talon
-    
+    speed = 0
     # This is changed to the value in robot.py
     SOME_CONSTANT = int
     
@@ -18,18 +18,16 @@ class Drive:
     
     def on_enable(self):
         '''Called when the robot enters teleop or autonomous mode'''
-        self.logger.info("Robot is enabled: I have SOME_CONSTANT=%s", self.SOME_CONSTANT)
+        self.logger.info("Robot is enabled: I have SOME_CONSTANT=%s", type(self))
 
-    def start_driving(self):
+    def start_driving(self, speed):
         self.started_driving = True
-
-    def set_speed(self, speed):
         self.speed = speed
 
     def execute(self):
         if self.started_driving:
-            self.lMotor.setSpeed(-1)
-            self.rMotor.setSpeed(1)
+            self.lMotor.setSpeed(self.speed)
+            self.rMotor.setSpeed(-self.speed)
         else:
             self.lMotor.set(0)
             self.rMotor.set(0)
