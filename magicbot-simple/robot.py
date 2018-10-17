@@ -44,6 +44,7 @@ class MyRobot(MagicRobot):
 
         if self.joystick.getTrigger():
             self.drive.start_driving()
+            self.drive.set_speed(self.joystick.getY)
     
 
 if __name__ == '__main__':

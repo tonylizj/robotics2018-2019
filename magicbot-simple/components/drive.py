@@ -23,10 +23,13 @@ class Drive:
     def start_driving(self):
         self.started_driving = True
 
+    def set_speed(self, speed):
+        self.speed = speed
+
     def execute(self):
         if self.started_driving:
-            self.lMotor.set(-1)
-            self.rMotor.set(1)
+            self.lMotor.setSpeed(-1)
+            self.rMotor.setSpeed(1)
         else:
             self.lMotor.set(0)
             self.rMotor.set(0)
