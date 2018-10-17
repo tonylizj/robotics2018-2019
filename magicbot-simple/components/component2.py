@@ -26,7 +26,7 @@ class Component2:
     def execute(self):
         if self.did_something:
             self.lMotor.set(1)
-            self.rMotor.set(1)
+            self.rMotor.set(-1)
         else:
             self.lMotor.set(0)
             self.rMotor.set(0)
