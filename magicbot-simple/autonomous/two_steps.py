@@ -1,18 +1,19 @@
 
 from magicbot import AutonomousStateMachine, tunable, timed_state
              
-from components.component2 import Component2
-                    
+from components.drive import Drive
+
+
 class TwoSteps(AutonomousStateMachine):
 
     MODE_NAME = 'Two Steps'
     DEFAULT = True
     
-    component2 = Component2
+    drive = Drive
     
     drive_speed = tunable(-1)
 
-    @timed_state(duration=2, next_state='do_something', first=True)
+    @timed_state(duration=2, next_state='start_driving', first=True)
     def dont_do_something(self):
         '''This happens first'''
         pass
@@ -20,5 +21,5 @@ class TwoSteps(AutonomousStateMachine):
     @timed_state(duration=5)
     def do_something(self):
         '''This happens second'''
-        self.component2.do_something()
+        self.drive.start_driving()
 
