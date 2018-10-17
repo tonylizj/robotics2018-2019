@@ -4,10 +4,10 @@ from .component1 import Component1
 
 from magicbot import will_reset_to
 
-class Component2:
+class DriveTrain:
     
     component1 = Component1
-    some_motor = wpilib.Talon
+    motor = wpilib.Talon
     
     # This is changed to the value in robot.py
     SOME_CONSTANT = int
@@ -23,4 +23,4 @@ class Component2:
         self.did_something = True
 
     def execute(self, power):
-        self.some_motor.set(power)
+        self.motor.set(power)

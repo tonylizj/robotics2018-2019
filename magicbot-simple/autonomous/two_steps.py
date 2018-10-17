@@ -1,14 +1,14 @@
-
+import wpilib
 from magicbot import AutonomousStateMachine, tunable, timed_state
              
-from components.component2 import Component2
+from components.DriveTrain import DriveTrain
                     
 class TwoSteps(AutonomousStateMachine):
 
     MODE_NAME = 'Two Steps'
     DEFAULT = True
     
-    component2 = Component2
+    motor = wpilib.Talon
     
     drive_speed = tunable(-1)
 
@@ -20,4 +20,4 @@ class TwoSteps(AutonomousStateMachine):
     @timed_state(duration=5)
     def do_something(self):
         '''This happens second'''
-        self.component2.do_something()
+        self.drive.do_something()

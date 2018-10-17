@@ -4,8 +4,8 @@ import wpilib
 from magicbot import MagicRobot
 
 from components.component1 import Component1
-from components.component2 import Component2
-
+from components.DriveTrain import DriveTrain
+from autonomous.two_steps import TwoSteps
 
 class MyRobot(MagicRobot):
     
@@ -14,8 +14,10 @@ class MyRobot(MagicRobot):
     #
     
     component1 = Component1
-    component2 = Component2
-    
+    l_drive = DriveTrain
+    r_drive = DriveTrain
+    auto_r_drive = TwoSteps
+    auto_l_drive = TwoSteps
     # You can even pass constants to components
     SOME_CONSTANT = 1
     
@@ -24,9 +26,10 @@ class MyRobot(MagicRobot):
         
         # TODO: create button example here
         
-        self.component1_motor = wpilib.Talon(1)
-        self.some_motor = wpilib.Talon(2)
-        
+        self.r_drive_motor = wpilib.Talon(1)
+        self.l_drive_motor = wpilib.Talon(2)
+        self.auto_r_drive_motor = wpilib.Talon(1)
+        self.auto_l_drive_motor = wpilib.Talon(2)
         self.joystick = wpilib.Joystick(0)
     
     #
@@ -40,7 +43,7 @@ class MyRobot(MagicRobot):
         
         try:
             if self.joystick.getY():
-                self.component2.execute(self.joystick.getY())
+                self.drive.execute(self.joystick.getY())
         except:
             self.onException()
 
