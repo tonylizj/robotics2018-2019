@@ -23,13 +23,11 @@ class MyRobot(MagicRobot):
 
         # TODO: create button example here
 
-
         # self.component1_motor = wpilib.Talon(1)
         # self.some_motor = wpilib.Talon(2)
 
         self.lMotor = wpilib.Talon(1)
         self.rMotor = wpilib.Talon(2)
-
 
         self.joystick = wpilib.Joystick(0)
 
@@ -37,8 +35,7 @@ class MyRobot(MagicRobot):
     # No autonomous routine boilerplate required here, anything in the
     # autonomous folder will automatically get added to a list
     #
-    
-    
+
     def teleopPeriodic(self):
         """Place code here that does things as a result of operator
            actions"""

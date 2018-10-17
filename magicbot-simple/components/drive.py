@@ -4,6 +4,7 @@ from .component1 import Component1
 
 from magicbot import will_reset_to
 
+
 class Drive:
     
     component1 = Component1
