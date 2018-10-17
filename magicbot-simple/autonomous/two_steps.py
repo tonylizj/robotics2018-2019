@@ -21,3 +21,4 @@ class TwoSteps(AutonomousStateMachine):
     def do_something(self):
         '''This happens second'''
         self.component2.do_something()
+

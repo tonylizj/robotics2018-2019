@@ -7,7 +7,8 @@ from magicbot import will_reset_to
 class Component2:
     
     component1 = Component1
-    some_motor = wpilib.Talon
+    lMotor = wpilib.Talon
+    rMotor = wpilib.Talon
     
     # This is changed to the value in robot.py
     SOME_CONSTANT = int
@@ -22,5 +23,10 @@ class Component2:
     def do_something(self):
         self.did_something = True
 
-    def execute(self, power):
-        self.some_motor.set(power)
+    def execute(self):
+        if self.did_something:
+            self.lMotor.set(1)
+            self.rMotor.set(1)
+        else:
+            self.lMotor.set(0)
+            self.rMotor.set(0)

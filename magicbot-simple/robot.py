@@ -24,8 +24,11 @@ class MyRobot(MagicRobot):
         
         # TODO: create button example here
         
-        self.component1_motor = wpilib.Talon(1)
-        self.some_motor = wpilib.Talon(2)
+        #self.component1_motor = wpilib.Talon(1)
+        #self.some_motor = wpilib.Talon(2)
+
+        self.lMotor = wpilib.Talon(0)
+        self.rMotor = wpilib.Talon(1)
         
         self.joystick = wpilib.Joystick(0)
     
@@ -33,17 +36,15 @@ class MyRobot(MagicRobot):
     # No autonomous routine boilerplate required here, anything in the
     # autonomous folder will automatically get added to a list
     #
-
+    
+    
     def teleopPeriodic(self):
         """Place code here that does things as a result of operator
            actions"""
-        
-        try:
-            if self.joystick.getY():
-                self.component2.execute(self.joystick.getY())
-        except:
-            self.onException()
 
+        if self.joystick.getTrigger():
+            self.component2.do_something()
     
+
 if __name__ == '__main__':
     wpilib.run(MyRobot)
