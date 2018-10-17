@@ -40,8 +40,7 @@ class MyRobot(MagicRobot):
         """Place code here that does things as a result of operator
            actions"""
 
-        if self.joystick.getTrigger():
-            self.drive.start_driving(self.joystick.getY())
+        self.drive.start_driving(self.joystick.getY(), -self.joystick.getX(), -self.joystick.getX())
 
 
 if __name__ == '__main__':
