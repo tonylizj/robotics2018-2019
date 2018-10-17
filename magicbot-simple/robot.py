@@ -27,8 +27,13 @@ class MyRobot(MagicRobot):
         #self.component1_motor = wpilib.Talon(1)
         #self.some_motor = wpilib.Talon(2)
 
+<<<<<<< HEAD
         self.lMotor = wpilib.Talon(1)
         self.rMotor = wpilib.Talon(2)
+=======
+        self.lMotor = wpilib.Talon(2)
+        self.rMotor = wpilib.Talon(1)
+>>>>>>> feb55d562fb5f40bc5a1277ae515f12b81b52f69
         
         self.joystick = wpilib.Joystick(0)
     
