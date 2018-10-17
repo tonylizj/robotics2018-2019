@@ -3,7 +3,6 @@
 import wpilib
 from magicbot import MagicRobot
 
-from components.drive import Component1
 from components.drive import Drive
 
 
@@ -12,7 +11,6 @@ class MyRobot(MagicRobot):
     # Define components here
     #
 
-    component1 = Component1
     drive = Drive
 
     # You can even pass constants to components
