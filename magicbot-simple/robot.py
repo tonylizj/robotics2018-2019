@@ -29,6 +29,7 @@ class MyRobot(MagicRobot):
 
         self.joystick = wpilib.Joystick(0)
 
+    #
     # No autonomous routine boilerplate required here, anything in the
     # autonomous folder will automatically get added to a list
     #
