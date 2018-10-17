@@ -27,8 +27,8 @@ class Drive:
 
     def execute(self):
         if self.started_driving:
-            self.lMotor.setSpeed(-self.driving_speed())
-            self.rMotor.setSpeed(self.driving_speed())
+            self.lMotor.setSpeed(-self.driving_speed)
+            self.rMotor.setSpeed(self.driving_speed)
         else:
             self.lMotor.set(0)
             self.rMotor.set(0)

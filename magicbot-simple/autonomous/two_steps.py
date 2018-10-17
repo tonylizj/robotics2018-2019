@@ -17,5 +17,5 @@ class TwoSteps(AutonomousStateMachine):
     @timed_state(duration=5, first=True)
     def drive_forward(self):
         # '''This happens second'''
-        self.drive.start_driving()
+        self.drive.start_driving(1)
 
