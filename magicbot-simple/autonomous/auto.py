@@ -1,7 +1,6 @@
 from magicbot import AutonomousStateMachine, tunable, timed_state
 
 from components.drive import Drive
-import components
 
 
 class TwoSteps(AutonomousStateMachine):
@@ -18,5 +17,4 @@ class TwoSteps(AutonomousStateMachine):
     @timed_state(duration=5, first=True)
     def drive_forward(self):
         # '''This happens second'''
-        self.drive.start_driving(1)
-
+        self.drive.start_driving(1, 0, 0)
