@@ -19,16 +19,15 @@ class Drive:
         '''Called when the robot enters teleop or autonomous mode'''
         self.logger.info("Robot is enabled: I have SOME_CONSTANT=%s", self.SOME_CONSTANT)
 
-    def start_driving(self, speed, lTurn, rTurn):
+    def start_driving(self, speed, turn):
         self.started_driving = True
         self.driving_speed = speed
-        self.lTurning_speed = lTurn
-        self.rTurning_speed = rTurn
+        self.turning_speed = turn
 
     def execute(self):
         if self.started_driving:
-            self.lMotor.setSpeed(-self.driving_speed + self.lTurning_speed * 0.2)
-            self.rMotor.setSpeed(self.driving_speed + self.rTurning_speed * 0.2)
+            self.lMotor.setSpeed(self.driving_speed + self.turning_speed * 0.2)
+            self.rMotor.setSpeed(-self.driving_speed + self.turning_speed * 0.2)
 
         else:
             self.lMotor.setSpeed(0)

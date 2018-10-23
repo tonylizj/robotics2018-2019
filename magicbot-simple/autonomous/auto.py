@@ -11,10 +11,14 @@ class TwoSteps(AutonomousStateMachine):
     
     drive_speed = tunable(-1)
 
-    # @timed_state(duration=2, next_state='start_driving', first=True)
-    # def dont_do_something(self):
-
-    @timed_state(duration=5, first=True)
+    @timed_state(duration=0.5, next_state='turn_left', first=True)
     def drive_forward(self):
-        # '''This happens second'''
-        self.drive.start_driving(1, 0, 0)
+        self.drive.start_driving(-1, 0)
+
+    @timed_state(duration=0.5, next_state='turn_right')
+    def turn_left(self):
+        self.drive.start_driving(-1, 0.3)
+
+    @timed_state(duration=0.5, next_state='drive_forward')
+    def turn_right(self):
+        self.drive.start_driving(-1, -0.3)
