@@ -38,7 +38,7 @@ class MyRobot(MagicRobot):
         """Place code here that does things as a result of operator
            actions"""
 
-        self.drive.start_driving(self.joystick.getY(), -self.joystick.getX(), -self.joystick.getX())
+        self.drive.start_driving(-self.joystick.getY(), -self.joystick.getX())
 
 
 if __name__ == '__main__':
